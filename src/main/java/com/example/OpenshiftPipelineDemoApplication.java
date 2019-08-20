@@ -17,7 +17,7 @@ public class OpenshiftPipelineDemoApplication {
 
         @GetMapping("/")
         public String greet() {
-            return "Hello World!";
+            return "Hello World!!!";
         }
 
     }
