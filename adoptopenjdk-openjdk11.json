@@ -1,0 +1,10 @@
+{
+  "kind": "ImageStream",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "adoptopenjdk-openjdk11"
+  },
+  "spec": {
+    "dockerImageRepository": "adoptopenjdk/openjdk11"
+  }
+}
