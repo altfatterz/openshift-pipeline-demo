@@ -4,7 +4,21 @@ Source-To-Image (S2I)
 https://github.com/openshift/source-to-image
 ```
 
-Login
+### Locally
+
+```bash
+s2i ...
+```
+
+### On OpenShift Cluster
+
+```bash
+oc start-build ...
+```
+
+See details: https://github.com/fabric8io-images/s2i/tree/master/java/examples/maven
+
+### Login
 
 ```bash
 oc login --insecure-skip-tls-verify https://192.168.99.102:8443
@@ -122,6 +136,23 @@ docker run --name artifactory -d -p 8081:8081 docker.bintray.io/jfrog/artifactor
 oc new-app docker.bintray.io/jfrog/artifactory-pro
 ```
 
+```bash
+minishift openshift service artifactory-pro
+|-----------|-----------------|----------|--------------------------------------------------------|--------|
+| NAMESPACE |      NAME       | NODEPORT |                       ROUTE-URL                        | WEIGHT |
+|-----------|-----------------|----------|--------------------------------------------------------|--------|
+| myproject | artifactory-pro |          | http://artifactory-pro-myproject.192.168.99.102.nip.io |        |
+|-----------|-----------------|----------|--------------------------------------------------------|--------|
+```
+
+or
+
+```bash
+minishift openshift service s2i-java-example --in-browser
+```
+
+
+
 export the `settings.xml` from OpenShift
 
 Copy into the `configuration` folder.
@@ -164,9 +195,14 @@ http://artifactory-pro.myproject.svc:8081
 More details how the `S2I Centos images` are created using:
 
 ```bash
-https://github.com/fabric8io-images/s2i/blob/master/java/images/centos/s2i/assemble
+https://github.com/fabric8io-images/s2i/tree/master/java/images
 ```
 
+How the maven setup works:
+
+```bash
+https://github.com/fabric8io-images/s2i/blob/master/java/images/centos/s2i/assemble
+```
 
 ### OC CLI
 
