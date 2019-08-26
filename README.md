@@ -276,6 +276,34 @@ The tutorial at `https://github.com/openshift/origin/blob/master/examples/jenkin
 contains more information about using this template.
 
 
+#### RedHat Container Catalog
+
+```bash
+Registry: registry.redhat.io
+Repository: redhat-openjdk-18/openjdk18-openshift
+Image type: Builder Image
+```
+
+https://access.redhat.com/containers/?tab=images#/registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift
+
+```bash
+$ docker login registry.redhat.io
+Username: ${REGISTRY-SERVICE-ACCOUNT-USERNAME}
+Password: ${REGISTRY-SERVICE-ACCOUNT-PASSWORD}
+Login Succeeded!
+
+$ docker pull registry.redhat.io/redhat-openjdk-18/openjdk18-openshift
+```
+
+#### buildah
+
+A tool that facilitates building Open Container Initiative (OCI) container images
+https://github.com/containers/buildah
+
+
+
+
+
 ### Resources
 
 Follow this:
